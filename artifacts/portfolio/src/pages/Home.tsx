@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { SiGithub, SiInstagram } from "react-icons/si";
-import { Terminal, Database, MessageSquare, Briefcase, Zap, Flame, MoveRight, Code2, Mail, GitBranch, GitCommit, Activity } from "lucide-react";
+import { Terminal, Database, MessageSquare, Briefcase, Zap, Flame, MoveRight, Code2, Mail, GitBranch, GitCommit, Activity, Send } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import profilePhoto from "@assets/profile.jpeg";
 
@@ -11,8 +12,8 @@ export default function Home() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
       },
     },
   };
@@ -21,6 +22,25 @@ export default function Home() {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
   };
+
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sent, setSent] = useState(false);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Portfolio enquiry from ${form.name}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
+    window.open(`mailto:tusharkaushik1328@gmail.com?subject=${subject}&body=${body}`);
+    setSent(true);
+    setTimeout(() => setSent(false), 3000);
+  }
+
+  const socials = [
+    { icon: SiGithub,    label: "GitHub",    handle: "tushar-ksk",          href: "https://github.com/tushar-ksk" },
+    { icon: FaLinkedin,  label: "LinkedIn",  handle: "tusharkaushik1328",   href: "https://www.linkedin.com/in/tusharkaushik1328" },
+    { icon: SiInstagram, label: "Instagram", handle: "nonit_kaushik",       href: "https://www.instagram.com/nonit_kaushik" },
+    { icon: Mail,        label: "Email",     handle: "tusharkaushik1328@…", href: "mailto:tusharkaushik1328@gmail.com" },
+  ];
 
   const commitGrid = [1,0,2,3,1,0,2, 3,2,1,0,3,2,1, 0,1,3,2,0,1,3, 2,3,0,1,2,3,1];
   const commits = [
@@ -266,7 +286,6 @@ export default function Home() {
 
         {/* GITHUB STATS / AIOPS ACTIVITY — fills bottom-right below Utility Tools */}
         <motion.div variants={item} className="bento-card md:col-span-1 lg:col-span-2 font-mono overflow-hidden">
-          {/* Terminal chrome */}
           <div className="flex items-center gap-2 mb-4">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
@@ -278,8 +297,6 @@ export default function Home() {
             </div>
             <GitCommit className="w-3.5 h-3.5 text-muted-foreground/40" />
           </div>
-
-          {/* Command line */}
           <div className="space-y-1.5 text-xs">
             <p>
               <span className="text-primary font-semibold">tushar</span>
@@ -288,23 +305,96 @@ export default function Home() {
               <span className="text-muted-foreground/60">:~$&nbsp;</span>
               <span className="text-foreground/90">git log --oneline -n 5</span>
             </p>
-
-            {/* Commit list */}
             {commits.map((c) => (
-              <p key={c.hash} className="pl-0 flex gap-2">
+              <p key={c.hash} className="flex gap-2">
                 <span className="text-yellow-400/70 shrink-0">{c.hash}</span>
                 <span className="text-foreground/70">{c.message}</span>
               </p>
             ))}
-
-            {/* Blank prompt with blinking cursor */}
-            <p className="pt-1 flex items-center gap-0">
+            <p className="pt-1 flex items-center">
               <span className="text-primary font-semibold">tushar</span>
               <span className="text-muted-foreground/60">@</span>
               <span className="text-green-400/80">tusharlinux</span>
               <span className="text-muted-foreground/60">:~$&nbsp;</span>
               <span className="inline-block w-1.5 h-3.5 bg-primary/80 animate-pulse ml-0.5" />
             </p>
+          </div>
+        </motion.div>
+
+        {/* CONTACT & CONNECT — full-width anchor at the bottom */}
+        <motion.div variants={item} className="bento-card md:col-span-3 lg:col-span-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+
+            {/* LEFT: Minimal contact form */}
+            <div>
+              <h3 className="text-base font-display font-semibold mb-4 flex items-center gap-2">
+                <Send className="w-4 h-4 text-primary" /> Get In Touch
+              </h3>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
+                <div className="grid grid-cols-2 gap-2.5">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Name"
+                    value={form.name}
+                    onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                    className="px-3 py-2 rounded-xl bg-secondary/40 border border-[#27272A] text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:bg-primary/5 transition-colors"
+                  />
+                  <input
+                    type="email"
+                    required
+                    placeholder="Email"
+                    value={form.email}
+                    onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                    className="px-3 py-2 rounded-xl bg-secondary/40 border border-[#27272A] text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:bg-primary/5 transition-colors"
+                  />
+                </div>
+                <textarea
+                  required
+                  placeholder="Message"
+                  rows={3}
+                  value={form.message}
+                  onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                  className="px-3 py-2 rounded-xl bg-secondary/40 border border-[#27272A] text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:bg-primary/5 transition-colors resize-none"
+                />
+                <button
+                  type="submit"
+                  className="self-start flex items-center gap-2 px-5 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(59,130,246,0.45)] active:scale-95 transition-all duration-200"
+                >
+                  {sent
+                    ? <><span className="w-3.5 h-3.5 rounded-full bg-green-400 inline-block" /> Sent!</>
+                    : <><Send className="w-3.5 h-3.5" /> Send Message</>
+                  }
+                </button>
+              </form>
+            </div>
+
+            {/* RIGHT: Social badge grid */}
+            <div>
+              <h3 className="text-base font-display font-semibold mb-4 flex items-center gap-2">
+                <Zap className="w-4 h-4 text-primary" /> Connect
+              </h3>
+              <div className="grid grid-cols-2 gap-2.5">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center gap-3 p-3 rounded-xl bg-secondary/40 border border-[#27272A] hover:bg-primary/10 hover:border-primary/40 transition-all duration-200"
+                  >
+                    <div className="p-1.5 rounded-lg bg-background/60 group-hover:bg-primary/20 transition-colors shrink-0">
+                      <s.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold text-foreground/80 group-hover:text-primary transition-colors">{s.label}</p>
+                      <p className="text-[10px] text-muted-foreground/50 font-mono truncate">{s.handle}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
           </div>
         </motion.div>
 

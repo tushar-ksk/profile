@@ -31,7 +31,7 @@ export default function Projects() {
   ];
 
   const utilityTools = [
-    { title: "Coding Agent", desc: "Autonomous Python agent for scripted task execution", icon: Terminal },
+    { title: "Coding Agent", desc: "Autonomous Python CLI agent for scripted task execution", icon: Terminal },
     { title: "Library Management", desc: "CLI-based book catalog and borrowing system", icon: FileText },
     { title: "Dear Diary", desc: "Encrypted personal journal with Python file I/O", icon: CheckSquare },
     { title: "Weather App", desc: "Live weather fetcher using public APIs", icon: Cloud },
