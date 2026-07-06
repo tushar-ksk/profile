@@ -1,0 +1,37 @@
+Create a premium, ultra-modern, hyper-responsive portfolio website for an aspiring AI/ML & AIOps Engineer named Tushar, who is currently in his 3rd semester of B.Tech CSE (AI/ML). 
+
+The website must look like the viral, minimalist premium developer portfolios popular on Instagram Reels. Use a sharp, clean Bento Grid layout with smooth micro-interactions, custom cursor effects, and subtle animations.
+
+DESIGN SYSTEM & VIBE:
+- Theme Toggle: Implement a 3-way toggle or clean switch for Light Mode, Dark Mode, and deep "Midnight/Night" Mode. 
+- Colors: Deep charcoal black (#0B0B0F), sleek metallic greys, and a solid premium accent color like Cyber Indigo or Electric Blue. High contrast, sharp borders with subtle glassmorphism (backdrop-blur).
+- Vibe: Masculine, highly technical, and deeply infused with a "Code & Music" aesthetic. Add a subtle, interactive "Now Playing" or "Current Vibe" widget that simulates a music visualizer or equalizer animation to represent that Tushar codes, builds, and lives with music playing.
+
+INTERACTIVE FEATURES:
+- Custom Cursor: Implement a beautiful, fluid custom cursor trail effect (e.g., a smooth circle follower or subtle particle glow that responds as the mouse moves across the bento blocks).
+- Micro-interactions: Every grid item should have a hover lift effect, and buttons should have satisfying, crisp click or hover transitions.
+
+BENTO GRID SECTIONS TO INCLUDE:
+
+1. HERO BLOCK (Large):
+- Title: "Tushar"
+- Subtitle: "B.Tech CSE (AI/ML) — 3rd Semester"
+- Bio taglines: "Building the future of intelligent systems. Driven by mathematics, fueled by music, and aiming to lead heavy-hitting ML & AIOps teams."
+- Include dynamic social media icons/pills: GitHub, LinkedIn, Instagram, and a direct Gmail contact button.
+
+2. TECH STACK & CURRENT FOCUS (Medium Block):
+- Showcase core skills cleanly using minimal modern tags: Python, C, NumPy, Pandas, Matplotlib, Seaborn, Scikit-Learn.
+- Add a special "Current Learning Sprint" radar or progress badge showing: "Currently Mastering: Support Vector Machines (SVM) & Advanced Data Preprocessing."
+
+3. CORE & MEGA PROJECTS (Large Grid or Slider Block):
+Highlight his development journey prominently using his actual projects:
+- "AI-Integrated Virtual Voice Assistant" (Mega Project: Automated, interactive voice agent)
+- "WhatsApp Chatbot" (Mega Project: Automated chat utility with custom triggers)
+- "Coding Agent" (Advanced script/agent)
+- "Data & Utility Tools" (Group his foundational projects like Library Management, Weather App, Dear Diary, and Adventure Game into a sleek expandable folder or minimal list layout).
+
+4. THE "X-FACTOR" BLOCKS (Small Widgets):
+- Core Strengths Block: A minimal graphic or clean text block emphasizing "Strong Mathematical Foundations & High-Impact Communication Skills."
+- Vibe Widget: A beautiful custom audio-themed UI widget titled "Current Vibe" showing a lo-fi looping waveform with a note: "Coding on full blast. Music is always on."
+
+Ensure the code is generated using React, Tailwind CSS, and Lucide React icons. Ensure the layout is flawlessly responsive and looks spectacular on mobile screens just as it does on desktop monitors.
