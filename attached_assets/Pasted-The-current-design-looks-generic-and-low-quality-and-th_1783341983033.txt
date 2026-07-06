@@ -1,0 +1,21 @@
+The current design looks generic and low-quality, and the custom cursor is lagging heavily. Let's fix the performance and completely overhaul the UI to make it look premium, technical, and masculine. 
+
+Follow these strict design and performance guidelines:
+
+1. FIX THE CURSOR LAG (Performance Optimization):
+- Completely remove any heavy JavaScript-based cursor-trail or fluid-particle physics that recalculate on every mouse movement. This is causing the frame drops.
+- Instead, use pure CSS or lightweight hardware-accelerated animations for the hover effects. If using a cursor follower, implement a highly optimized React hook with transform: translate3d() to leverage GPU rendering, or simply use smooth CSS transitions on the Bento cards themselves when the default mouse hovers over them.
+
+2. OVERHAUL THE COLOR SCHEME & STYLING (Premium Look):
+- Drop the generic bright violet/blue color combination. 
+- Use a Matte "Midnight Charcoal" theme: Main background should be a rich matte black (#09090B or #0D0D11). 
+- Card Backgrounds: Use solid dark grey charcoal (#18181B) with extremely subtle, crisp borders (#27272A).
+- Accents: Instead of bright neon fills, use muted premium Slate Silver, Gunmetal, and a sharp, clean accent color like a deep Emerald Green (#10B981) or crisp Electric Blue (#3B82F6) ONLY for text highlights, indicators, or active states.
+- Typography: Use a solid sans-serif font (like Inter or Geist sans). Titles should be bold and stark white (#FFFFFF); descriptions should be a clean muted grey (#A1A1AA).
+
+3. RE-ARRANGE THE BENTO GRID (Clean & Professional):
+- Keep the blocks tightly aligned with consistent padding (gap-4 or gap-6).
+- Make sure the "Current Vibe" music widget uses a very simple, lightweight pure-CSS looping bar animation (keyframes) so it takes 0% CPU memory.
+- Ensure all social media links are mapped correctly and open cleanly in new tabs.
+
+Re-write the styling components based on these instructions to make the UI look sharp, masculine, and highly performant.
