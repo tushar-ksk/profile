@@ -4,8 +4,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { CustomCursor } from "@/components/CustomCursor";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { NavBar } from "@/components/NavBar";
 import Home from "@/pages/Home";
+import Projects from "@/pages/Projects";
+import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -14,6 +16,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/projects" component={Projects} />
+      <Route path="/about" component={About} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -25,8 +29,8 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <CustomCursor />
-          <ThemeToggle />
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <NavBar />
             <Router />
           </WouterRouter>
           <Toaster />

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { SiGithub, SiInstagram } from "react-icons/si";
 import { Terminal, Database, MessageSquare, Briefcase, Zap, Flame, MoveRight, Code2, Linkedin, Mail } from "lucide-react";
 
@@ -56,10 +57,10 @@ export default function Home() {
           
           <div className="flex flex-wrap gap-3">
             {[
-              { icon: SiGithub, label: "GitHub", href: "https://github.com" },
-              { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-              { icon: SiInstagram, label: "Instagram", href: "https://instagram.com" },
-              { icon: Mail, label: "Email", href: "mailto:tushar@example.com" }
+              { icon: SiGithub, label: "GitHub", href: "https://github.com/tushar-ksk" },
+              { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/tusharkaushik1328" },
+              { icon: SiInstagram, label: "Instagram", href: "https://www.instagram.com/nonit_kaushik" },
+              { icon: Mail, label: "Email", href: "mailto:tusharkaushik1328@gmail.com" }
             ].map((social, i) => (
               <a 
                 key={i} 
@@ -142,9 +143,9 @@ export default function Home() {
             <h3 className="text-2xl font-display font-bold flex items-center gap-2">
               <Briefcase className="w-6 h-6 text-primary" /> Featured Builds
             </h3>
-            <a href="https://github.com" className="text-sm text-muted-foreground hover:text-primary flex items-center gap-1 transition-colors group">
+            <Link href="/projects" className="text-sm text-muted-foreground hover:text-primary flex items-center gap-1 transition-colors group">
               View all <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-col gap-4 h-full">

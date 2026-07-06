@@ -1,0 +1,44 @@
+Create a premium, multi-page, ultra-modern, hyper-responsive portfolio website for an aspiring AI/ML & AIOps Engineer named Tushar, who is currently in his 3rd semester of B.Tech CSE (AI/ML). 
+
+The website must follow a high-end "Insta Reels" developer aesthetic using a sharp Bento Grid main dashboard, clean multi-page navigation, smooth micro-interactions, custom cursor effects, and satisfying animations.
+
+NAVIGATION & PAGES TO CREATE:
+Implement a sleek, glassmorphic header navigation bar with tabs to toggle between pages:
+1. Home (The main Bento Grid Dashboard summarizing everything)
+2. Projects (A dedicated page deep-diving into his full project list)
+3. About & Learning (A dedicated page tracking his ML journey, mathematics background, and musical vibe)
+
+SOCIAL LINKS & CONTACT (Integrate these everywhere relevant, especially in headers/footers/hero blocks):
+- GitHub: https://github.com/tushar-ksk
+- LinkedIn: https://www.linkedin.com/in/tusharkaushik1328
+- Instagram: https://www.instagram.com/nonit_kaushik
+- Email: tusharkaushik1328@gmail.com (Set up as a 'mailto:' link)
+
+DESIGN SYSTEM & VIBE:
+- Theme Toggle: Implement a 3-way toggle or crisp switch for Light Mode, Dark Mode, and a deep "Midnight/Night" Mode.
+- Colors: Deep charcoal black (#0B0B0F), sleek metallic greys, and a solid premium accent color like Cyber Indigo or Electric Blue. High contrast, sharp borders with subtle glassmorphism (backdrop-blur).
+- Vibe: Masculine, highly technical, and deeply infused with a "Code & Music" aesthetic. Add an interactive "Now Playing" or "Current Vibe" widget that simulates a shifting music visualizer or equalizer animation to represent that Tushar codes, builds, and lives with music on.
+
+INTERACTIVE EFFECTS:
+- Custom Cursor: Implement a beautiful, fluid custom cursor trail effect (e.g., a smooth circle follower or subtle particle glow that responds as the mouse moves across elements).
+- Micro-interactions: Every grid item should have a hover lift effect, and buttons should have satisfying, crisp click or hover transitions.
+
+PAGE-SPECIFIC CONTENT:
+
+1. HOME PAGE (Bento Grid Layout):
+- Hero Block: Title "Tushar", subtitle "B.Tech CSE (AI/ML) — 3rd Semester". Bio tagline: "Building the future of intelligent systems. Driven by mathematics, fueled by music, and aiming to lead heavy-hitting ML & AIOps teams." Includes clean pills/icons for his exact GitHub, LinkedIn, Instagram, and Email.
+- Tech Stack Widget: Clean modern tags for Python, C, NumPy, Pandas, Matplotlib, Seaborn, Scikit-Learn. Plus a highlighted "Current Sprint" badge: "Currently Mastering: Support Vector Machines (SVM) & Advanced Data Preprocessing."
+- Featured Projects Block: Quick teaser preview cards for his "AI-Integrated Virtual Voice Assistant" and "WhatsApp Chatbot" with a dynamic button saying "View All Projects ->" that navigates to the Projects page.
+- Core Strengths Block: A minimal graphic or clean text block emphasizing "Strong Mathematical Foundations & High-Impact Communication Skills."
+- Music Widget: A beautiful custom audio-themed UI widget titled "Current Vibe" showing a lo-fi looping waveform with a note: "Coding on full blast. Music is always on."
+
+2. PROJECTS PAGE:
+Showcase his development journey cleanly divided into tiers:
+- Mega AI Projects Section: Highlighting "AI-Integrated Virtual Voice Assistant" (Automated, interactive voice agent with AI integration) and "WhatsApp Chatbot" (Automated chat utility with custom triggers).
+- Python & Data Foundations Section: Displaying a neat grid or folder-style directory inspired by his file tree for: "Coding Agent", "Library Management", "Dear Diary", "Weather App", "Adventure Game", "To Do List", "Guess the Number", "Snake Water Gun", and "repeat_reply".
+
+3. ABOUT & LEARNING PAGE:
+- Focus on his profile as a 3rd-semester student "learning in public". Highlight his deep dive into data preprocessing and transitioning into heavy Machine Learning concepts (currently at SVM). 
+- Emphasize his core soft skills: Strong mathematics and crisp communication skills. Include a creative, dedicated text section or quote about how music is completely integrated into his life workflow—from coding to daily routines.
+
+Ensure the code is generated cleanly using React, Tailwind CSS, and Lucide React icons. Ensure the multi-page routing functions flawlessly and looks spectacular on both mobile screens and large monitors.
