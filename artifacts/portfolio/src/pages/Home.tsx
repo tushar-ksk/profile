@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { SiGithub, SiInstagram } from "react-icons/si";
-import { Terminal, Database, MessageSquare, Briefcase, Zap, Flame, MoveRight, Code2, Mail } from "lucide-react";
+import { Terminal, Database, MessageSquare, Briefcase, Zap, Flame, MoveRight, Code2, Mail, GitBranch, GitCommit, Activity } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
-import profilePhoto from "@assets/profile.png";
+import profilePhoto from "@assets/profile.jpeg";
 
 export default function Home() {
   const container = {
@@ -21,6 +21,15 @@ export default function Home() {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
   };
+
+  const commitGrid = [1,0,2,3,1,0,2, 3,2,1,0,3,2,1, 0,1,3,2,0,1,3, 2,3,0,1,2,3,1];
+  const commits = [
+    { hash: "a3f2c1b", message: "feat: implement svm pipeline" },
+    { hash: "7e9d4a2", message: "fix: voice assistant core latency" },
+    { hash: "2b8f6c3", message: "feat: add data preprocessing module" },
+    { hash: "5c1a9d4", message: "docs: update ml roadmap notes" },
+    { hash: "9f4b2e5", message: "refactor: optimise pandas pipeline" },
+  ];
 
   return (
     <div className="min-h-[100dvh] w-full px-4 py-24 md:px-8 lg:px-12 max-w-7xl mx-auto flex flex-col justify-center">
@@ -98,6 +107,47 @@ export default function Home() {
             <div className="absolute bottom-0 left-0 right-0 p-4">
               <p className="text-white font-display font-semibold text-sm tracking-wide">Tushar Kaushik</p>
               <p className="text-white/60 text-xs font-mono">AI/ML Engineer</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* VERSION CONTROL & WORKFLOW — fills col 4 rows 1-2 on lg */}
+        <motion.div variants={item} className="bento-card md:col-span-1 lg:col-span-1 lg:row-span-2 flex flex-col justify-between">
+          <div>
+            <div className="flex items-center gap-2 mb-5">
+              <div className="p-1.5 rounded-lg bg-primary/10 border border-primary/20">
+                <GitBranch className="w-4 h-4 text-primary" />
+              </div>
+              <h3 className="text-sm font-display font-semibold text-foreground">Version Control</h3>
+            </div>
+            <div className="flex flex-wrap gap-2 mb-5">
+              {["Git", "GitHub", "GitHub Actions"].map((tag) => (
+                <span key={tag} className="px-2.5 py-1 rounded-lg bg-secondary/60 border border-border/60 text-xs font-medium text-foreground/80 hover:border-primary/50 hover:text-primary transition-colors cursor-default">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground font-mono leading-relaxed border-l-2 border-primary/40 pl-3 italic">
+              Branching, PR workflows, and automated deployments.
+            </p>
+          </div>
+
+          <div className="mt-5">
+            <p className="text-[10px] text-muted-foreground/50 font-mono mb-2 flex items-center gap-1.5">
+              <Activity className="w-3 h-3" /> Last 4 weeks
+            </p>
+            <div className="grid grid-cols-7 gap-1">
+              {commitGrid.map((level, i) => (
+                <div
+                  key={i}
+                  className={`h-3 rounded-sm transition-colors ${
+                    level === 3 ? "bg-primary/90" :
+                    level === 2 ? "bg-primary/50" :
+                    level === 1 ? "bg-primary/20" :
+                    "bg-secondary/80"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </motion.div>
@@ -211,6 +261,50 @@ export default function Home() {
                 <MoveRight className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:-translate-x-1 transition-all" />
               </div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* GITHUB STATS / AIOPS ACTIVITY — fills bottom-right below Utility Tools */}
+        <motion.div variants={item} className="bento-card md:col-span-1 lg:col-span-2 font-mono overflow-hidden">
+          {/* Terminal chrome */}
+          <div className="flex items-center gap-2 mb-4">
+            <div className="flex gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+              <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+              <span className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+            </div>
+            <div className="flex-1 ml-3 px-3 py-0.5 rounded bg-secondary/60 text-[10px] text-muted-foreground/60 text-center">
+              bash — tushar@tusharlinux
+            </div>
+            <GitCommit className="w-3.5 h-3.5 text-muted-foreground/40" />
+          </div>
+
+          {/* Command line */}
+          <div className="space-y-1.5 text-xs">
+            <p>
+              <span className="text-primary font-semibold">tushar</span>
+              <span className="text-muted-foreground/60">@</span>
+              <span className="text-green-400/80">tusharlinux</span>
+              <span className="text-muted-foreground/60">:~$&nbsp;</span>
+              <span className="text-foreground/90">git log --oneline -n 5</span>
+            </p>
+
+            {/* Commit list */}
+            {commits.map((c) => (
+              <p key={c.hash} className="pl-0 flex gap-2">
+                <span className="text-yellow-400/70 shrink-0">{c.hash}</span>
+                <span className="text-foreground/70">{c.message}</span>
+              </p>
+            ))}
+
+            {/* Blank prompt with blinking cursor */}
+            <p className="pt-1 flex items-center gap-0">
+              <span className="text-primary font-semibold">tushar</span>
+              <span className="text-muted-foreground/60">@</span>
+              <span className="text-green-400/80">tusharlinux</span>
+              <span className="text-muted-foreground/60">:~$&nbsp;</span>
+              <span className="inline-block w-1.5 h-3.5 bg-primary/80 animate-pulse ml-0.5" />
+            </p>
           </div>
         </motion.div>
 
