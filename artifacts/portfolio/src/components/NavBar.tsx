@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { SiGithub, SiInstagram } from "react-icons/si";
-import { Linkedin, Mail, Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -26,7 +27,7 @@ export function NavBar() {
 
   const socialLinks = [
     { icon: SiGithub, href: "https://github.com/tushar-ksk", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/tusharkaushik1328", label: "LinkedIn" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/tusharkaushik1328", label: "LinkedIn" },
     { icon: SiInstagram, href: "https://www.instagram.com/nonit_kaushik", label: "Instagram" },
     { icon: Mail, href: "mailto:tusharkaushik1328@gmail.com", label: "Email" },
   ];

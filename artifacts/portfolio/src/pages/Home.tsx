@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { SiGithub, SiInstagram } from "react-icons/si";
-import { Terminal, Database, MessageSquare, Briefcase, Zap, Flame, MoveRight, Code2, Linkedin, Mail } from "lucide-react";
-import profilePhoto from "@assets/image_1783342316456.png";
+import { Terminal, Database, MessageSquare, Briefcase, Zap, Flame, MoveRight, Code2, Mail } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
+import profilePhoto from "@assets/profile.png";
 
 export default function Home() {
   const container = {
@@ -59,7 +60,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-3">
             {[
               { icon: SiGithub, label: "GitHub", href: "https://github.com/tushar-ksk" },
-              { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/tusharkaushik1328" },
+              { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/tusharkaushik1328" },
               { icon: SiInstagram, label: "Instagram", href: "https://www.instagram.com/nonit_kaushik" },
               { icon: Mail, label: "Email", href: "mailto:tusharkaushik1328@gmail.com" }
             ].map((social, i) => (
