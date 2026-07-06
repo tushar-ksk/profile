@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { SiGithub, SiInstagram } from "react-icons/si";
 import { Terminal, Database, MessageSquare, Briefcase, Zap, Flame, MoveRight, Code2, Linkedin, Mail } from "lucide-react";
+import profilePhoto from "@assets/image_1783342316456.png";
 
 export default function Home() {
   const container = {
@@ -73,6 +74,30 @@ export default function Home() {
                 <span className="text-sm font-medium sr-only md:not-sr-only">{social.label}</span>
               </a>
             ))}
+          </div>
+        </motion.div>
+
+        {/* PROFILE PHOTO */}
+        <motion.div
+          variants={item}
+          className="bento-card md:col-span-1 lg:col-span-1 md:row-span-2 p-0 overflow-hidden min-h-[280px]"
+        >
+          <div className="relative w-full h-full min-h-[280px]">
+            <img
+              src={profilePhoto}
+              alt="Tushar"
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
+            {/* Matte dark overlay — heavier at bottom for text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/20" />
+            {/* Corner accent line */}
+            <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary/60 rounded-tl-lg" />
+            <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary/60 rounded-br-lg" />
+            {/* Name label at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <p className="text-white font-display font-semibold text-sm tracking-wide">Tushar Kaushik</p>
+              <p className="text-white/60 text-xs font-mono">AI/ML Engineer</p>
+            </div>
           </div>
         </motion.div>
 
